@@ -7,9 +7,9 @@ import random
 
 
 
-def stk_zlzj(url,proxy):
+def stk_zlzj(url):
     requests.adapters.DEFAULT_RETRIES = 5
-    r = requests.get(url,proxies = proxy)
+    r = requests.get(url)
     txt = demjson.decode(r.text)
     df = pd.DataFrame(txt)
     r.close()
@@ -23,7 +23,7 @@ if __name__ == "__main__":
     stks = set()
     pd.set_option('expand_frame_repr',True)
     while True:
-        df = stk_zlzj(url=url,proxy = proxy)
+        df = stk_zlzj(url=url)
         df2 = df.loc[0:10,['name','symbol','trade',"changeratio","netamount","r0_ratio"]]
         for stk  in df2.symbol:
             if stk not in stks:
@@ -32,7 +32,7 @@ if __name__ == "__main__":
                 print(df2[df2["symbol"] == stk])
                 print(sinaurl + stk + '/nc.shtml' )
         print("wainting ...")
-        time.sleep(random.randint(60,120))
+        time.sleep(random.randint(30,60))
 
 
 

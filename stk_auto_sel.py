@@ -28,15 +28,14 @@ for code in stkcodes.index:
     if (
             df2.iloc[day1]['bar'] > 0
             and df2.iloc[day1]['ma5'] >= df2.iloc[day2]['ma5']
-            # and (df2.iloc[day1]['bar'] / df2.iloc[day2]['bar']) > 1.4
-            # and np.var([df.iloc[day1]['ma5'], df.iloc[day1]['ma20']]) < 0.0005
-            # and df.iloc[day1]['ma5'] > df.iloc[day2]['ma5']
-            # and df.iloc[day1]['ma20'] > df.iloc[day2]['ma20']
-            and df2.iloc[day1]['open'] < df2.iloc[day1]['ma5'] < df2.iloc[day1]['close']
-            and df2.iloc[day1]['open'] < df2.iloc[day1]['ma20'] < df2.iloc[day1]['close']
-            and df2.iloc[day1]['open'] < df2.iloc[day1]['ma50'] < df2.iloc[day1]['close']
+            and (df2.iloc[day1]['bar'] / df2.iloc[day2]['bar']) > 2
+            and df2.iloc[day1]['ma5'] > df2.iloc[day2]['ma5']
+            and df2.iloc[day1]['ma20'] > df2.iloc[day2]['ma20']
+            #and df2.iloc[day1]['open'] < df2.iloc[day1]['ma5'] < df2.iloc[day1]['close']
+            #and df2.iloc[day1]['open'] < df2.iloc[day1]['ma20'] < df2.iloc[day1]['close']
+            #and df2.iloc[day1]['open'] < df2.iloc[day1]['ma50'] < df2.iloc[day1]['close']
             # and df2.iloc[day1]['ma5'] > df2.iloc[day1]['ma20'] > df2.iloc[day2]['ma20']
-            # and df2.iloc[day1]['close'] > df2.iloc[day1]['ma20'] > df2.iloc[day1]['ma50']
+            and df2.iloc[day1]['close'] > df2.iloc[day1]['ma20'] > df2.iloc[day1]['ma50']
             # and np.std([df2.iloc[day1]['ma5'], df2.iloc[day1]['ma20']]) < 0.1
             # and df.iloc[day1]['ma50'] > df.iloc[day2]['ma50']
     ):
