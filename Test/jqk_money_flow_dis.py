@@ -7,7 +7,7 @@ import os
 def get_jqk_money_fllow():
     option = webdriver.ChromeOptions()
     option.add_argument('headless')
-    option.add_argument('--proxy-server=http://wsg.cmszmail.ad:8083')
+    # option.add_argument('--proxy-server=http://wsg.cmszmail.ad:8083')
     driver = webdriver.Chrome(chrome_options=option)
     driver.get('http://data.10jqka.com.cn/funds/ggzjl/###')
     soup = BeautifulSoup(driver.page_source,'html.parser')
