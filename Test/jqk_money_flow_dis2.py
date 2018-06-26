@@ -27,4 +27,3 @@ def get_jqk_money_flow():
 if __name__ == "__main__":
     while True:
         get_jqk_money_flow()
-        os.system('cls')

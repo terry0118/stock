@@ -29,7 +29,7 @@ for code in stkcodes.index:
             df2.iloc[day1]['bar'] > 0
             and df2.iloc[day1]['ma5'] >= df2.iloc[day2]['ma5']
             and (df2.iloc[day1]['bar'] / df2.iloc[day2]['bar']) > 2
-            and df2.iloc[day1]['ma5'] > df2.iloc[day2]['ma5']
+            # and df2.iloc[day1]['ma5'] > df2.iloc[day2]['ma5']
             and df2.iloc[day1]['ma20'] > df2.iloc[day2]['ma20']
             #and df2.iloc[day1]['open'] < df2.iloc[day1]['ma5'] < df2.iloc[day1]['close']
             #and df2.iloc[day1]['open'] < df2.iloc[day1]['ma20'] < df2.iloc[day1]['close']
